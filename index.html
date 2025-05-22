@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Social Artist - Digital Marketing Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="./index.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6d6ac8',
+                        secondary: '#f8f7ff'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white">
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 md:flex-none">
+                    <a href="#" class="block">
+                        <img src="https://static.readdy.ai/image/45f5a755c5aaf69b77bf8ac7ff2528de/6ffcc063b5d2cb5b4bbf896e8592a7f0.png"
+                            alt="The Social Artist Logo" class="h-16 md:h-12 mx-8 md:mx-0">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-primary">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary">Services</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-primary">Portfolio</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-primary">Testimonials</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary">Contact</a>
+                </div>
+                <button
+                    class="!rounded-button bg-primary text-white px-8 py-3 hover:bg-primary/90 transition-colors whitespace-nowrap text-lg hidden md:block">
+                    Book Free Call
+                </button>
+                <button class="md:hidden text-gray-600" id="mobileMenuBtn">
+                    <i class="ri-menu-line text-3xl"></i>
+                </button>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden">
+                <div class="px-4 pt-4 pb-6 space-y-3">
+                    <a href="#"
+                        class="block px-4 py-3 text-gray-700 hover:text-primary text-center font-semibold text-lg">Home</a>
+                    <a href="#services"
+                        class="block px-4 py-3 text-gray-700 hover:text-primary text-center text-lg">Services</a>
+                    <a href="#portfolio"
+                        class="block px-4 py-3 text-gray-700 hover:text-primary text-center text-lg">Portfolio</a>
+                    <a href="#testimonials"
+                        class="block px-4 py-3 text-gray-700 hover:text-primary text-center text-lg">Testimonials</a>
+                    <a href="#contact"
+                        class="block px-4 py-3 text-gray-700 hover:text-primary text-center text-lg">Contact</a>
+                    <button
+                        class="!rounded-button bg-primary text-white px-8 py-4 hover:bg-primary/90 transition-colors whitespace-nowrap w-full mt-6 text-lg">
+                        Book Free Call
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <header class="pt-16 bg-gradient-to-r from-secondary to-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-24 flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 md:pr-12 mb-12 md:mb-0">
+                <h1 class="text-3xl sm:text-5xl md:text-7xl font-bold text-gray-900 mb-6 md:mb-8 leading-tight">
+                    Make Your Brand Epic
+                </h1>
+                <p class="text-base sm:text-lg md:text-2xl text-gray-600 mb-8 md:mb-10">
+                    We craft data-driven digital strategies that connect brands with their audience and drive measurable
+                    results.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                    <button
+                        class="!rounded-button bg-primary text-white px-6 sm:px-10 py-3 sm:py-4 hover:bg-primary/90 transition-colors whitespace-nowrap text-base sm:text-xl w-full sm:w-auto">
+                        Get Started
+                    </button>
+                    <button
+                        class="!rounded-button border-2 border-primary text-primary px-6 sm:px-10 py-3 sm:py-4 hover:bg-primary/5 transition-colors whitespace-nowrap text-base sm:text-xl w-full sm:w-auto">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 relative">
+                <img src="https://public.readdy.ai/ai/img_res/960b8364c1a8f2cbbc90d9a0a143a0f7.jpg"
+                    alt="Digital Marketing Agency" class="rounded-lg shadow-xl">
+            </div>
+        </div>
+    </header>
+    <section class="py-24 bg-secondary">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">About The Social Artist</h2>
+                    <p class="text-lg text-gray-600 mb-8">We are a team of passionate digital marketers, creative minds,
+                        and strategic thinkers dedicated to transforming businesses through innovative digital
+                        solutions. With years of experience and a data-driven approach, we help brands connect with
+                        their audience and achieve measurable results.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div
+                                class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="ri-focus-3-line text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Our Vision</h3>
+                                <p class="text-gray-600">To be the leading force in digital transformation, helping
+                                    businesses thrive in the digital age through innovative marketing solutions.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="ri-heart-line text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Our Values</h3>
+                                <p class="text-gray-600">Innovation, integrity, and results-driven approach are at the
+                                    core of everything we do. We believe in creating lasting partnerships with our
+                                    clients.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="ri-shield-star-line text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Our Approach</h3>
+                                <p class="text-gray-600">We combine creative excellence with data-driven strategies to
+                                    deliver exceptional results that exceed client expectations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://static.readdy.ai/image/45f5a755c5aaf69b77bf8ac7ff2528de/2b46c740576ef663e1d5078413ad498d.png"
+                        alt="About Us" class="rounded-lg shadow-xl">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg">
+                        <div class="grid grid-cols-3 gap-6">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">2+</div>
+                                <p class="text-gray-600">Years Experience</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">55+</div>
+                                <p class="text-gray-600">Happy Clients</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">100+</div>
+                                <p class="text-gray-600">Projects Completed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600">Comprehensive digital solutions for your business growth</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="service-card bg-white p-8 rounded-lg shadow-lg">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-brush-line text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Branding & Identity</h3>
+                    <p class="text-gray-600 mb-6">Create a powerful brand identity that resonates with your target
+                        audience and sets you apart from competitors.</p>
+                    <button
+                        class="!rounded-button text-primary hover:bg-primary/5 px-6 py-2 transition-colors whitespace-nowrap">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </button>
+                </div>
+                <div class="service-card bg-white p-8 rounded-lg shadow-lg">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-chat-3-line text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Social Media Management</h3>
+                    <p class="text-gray-600 mb-6">Strategic social media campaigns that engage your audience and drive
+                        meaningful conversations.</p>
+                    <button
+                        class="!rounded-button text-primary hover:bg-primary/5 px-6 py-2 transition-colors whitespace-nowrap">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </button>
+                </div>
+                <div class="service-card bg-white p-8 rounded-lg shadow-lg">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-line-chart-line text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Performance Marketing</h3>
+                    <p class="text-gray-600 mb-6">Data-driven marketing strategies that maximize ROI and drive business
+                        growth.</p>
+                    <button
+                        class="!rounded-button text-primary hover:bg-primary/5 px-6 py-2 transition-colors whitespace-nowrap">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </button>
+                </div>
+                <div class="service-card bg-white p-8 rounded-lg shadow-lg">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-movie-line text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Content Creation</h3>
+                    <p class="text-gray-600 mb-6">Compelling content that tells your brand story and connects with your
+                        audience.</p>
+                    <button
+                        class="!rounded-button text-primary hover:bg-primary/5 px-6 py-2 transition-colors whitespace-nowrap">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio" class="py-24 bg-secondary">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Portfolio</h2>
+                <p class="text-xl text-gray-600">Showcasing our best work and success stories</p>
+            </div>
+            <div class="overflow-x-auto pb-6">
+                <div id="portfolioContainer" class="flex gap-4 sm:gap-6 min-w-max">
+                </div>
+            </div>
+            <script>
+                const portfolioItems = [
+                    {
+                        image: "https://static.readdy.ai/image/45f5a755c5aaf69b77bf8ac7ff2528de/e9064aae2d9e883a5ccfd07c8c05e0d7.jpeg",
+                        title: "Product Packaging Design"
+                    },
+                    {
+                        image: "https://static.readdy.ai/image/45f5a755c5aaf69b77bf8ac7ff2528de/2b59c2df5fccb82a948e445272e7cdcb.jpeg",
+                        title: "Ladies Night Campaign"
+                    },
+                    {
+                        image: "https://static.readdy.ai/image/45f5a755c5aaf69b77bf8ac7ff2528de/5b4c9c60e3d498a17fe3300baf6df848.jpeg",
+                        title: "Ladies Night Campaign"
+                    },
+                    {
+                        image: "https://static.readdy.ai/image/45f5a755c5aaf69b77bf8ac7ff2528de/f1e008baf4af82e2f80ecde89f80f360.jpeg",
+                        title: "Product Photography"
+                    },
+                    {
+                        image: "https://static.readdy.ai/image/45f5a755c5aaf69b77bf8ac7ff2528de/acbb2332457c6997c4275a417dfecf54.png",
+                        title: "Multi-Device Connection"
+                    },
+                    {
+                        image: "https://static.readdy.ai/image/45f5a755c5aaf69b77bf8ac7ff2528de/e90461f78729bcbfc33d64747b00f76a.png",
+                        title: "Social Media Campaign"
+                    }
+                ];
+                function createPortfolioItem(item) {
+                    return `
+<div class="group relative overflow-hidden rounded-lg w-[280px] sm:w-[400px]">
+<img src="${item.image}"
+alt="Portfolio Item"
+class="w-full h-48 sm:h-64 object-cover">
+<div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<h3 class="text-lg sm:text-xl font-bold text-white text-center px-4">${item.title}</h3>
+</div>
+</div>
+`;
+                }
+                function loadPortfolioItems() {
+                    const container = document.getElementById('portfolioContainer');
+                    portfolioItems.forEach(item => {
+                        container.innerHTML += createPortfolioItem(item);
+                    });
+                }
+                function cloneAndAppendItems() {
+                    const container = document.getElementById('portfolioContainer');
+                    const items = Array.from(container.children);
+                    items.forEach(item => {
+                        const clone = item.cloneNode(true);
+                        container.appendChild(clone);
+                    });
+                }
+                document.addEventListener('DOMContentLoaded', () => {
+                    loadPortfolioItems();
+                    const container = document.getElementById('portfolioContainer');
+                    let scrollPosition = 0;
+                    let scrollDirection = 1;
+                    function animate() {
+                        const maxScroll = container.scrollWidth / 2;
+                        scrollPosition += scrollDirection;
+                        if (scrollPosition >= maxScroll) {
+                            scrollPosition = 0;
+                        }
+                        container.style.transform = `translateX(${-scrollPosition}px)`;
+                        requestAnimationFrame(animate);
+                    }
+                    container.addEventListener('mouseenter', () => {
+                        scrollDirection = 0;
+                    });
+                    container.addEventListener('mouseleave', () => {
+                        scrollDirection = 1;
+                    });
+                    cloneAndAppendItems();
+                    animate();
+                });
+            </script>
+        </div>
+    </section>
+    <section class="py-24 bg-secondary">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Industries We Serve</h2>
+                <p class="text-xl text-gray-600">Trusted by leading companies across diverse sectors</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                <div
+                    class="bg-white p-6 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-bank-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900">Finance</h3>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-graduation-cap-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900">Education</h3>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-home-4-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900">Real Estate</h3>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-heart-pulse-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900">Healthcare</h3>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-movie-2-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900">Media</h3>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-lg shadow-lg text-center hover:transform hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-gamepad-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900">Entertainment</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="testimonials" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
+                <p class="text-xl text-gray-600">What our clients say about working with us</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-primary text-4xl mb-6">"</div>
+                    <p class="text-gray-600 mb-6">The Social Artist has completely transformed our online presence!
+                        Their strategic social media campaigns and engaging content have brought in more customers than
+                        ever. Their team understands the food industry and knows exactly how to showcase our authentic
+                        flavors. Highly recommended!</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="ri-user-3-line text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Rohit Arora</h4>
+                            <p class="text-gray-600">Khatir - The Family Dhaba</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-primary text-4xl mb-6">"</div>
+                    <p class="text-gray-600 mb-6">A big shoutout to The Social Artist for their exceptional digital
+                        marketing services! Their creativity, targeted ads, and social media strategies have
+                        significantly boosted our restaurant's visibility and footfall. We couldn't have asked for a
+                        better agency!</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="ri-user-3-line text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Rakesh Kaushik</h4>
+                            <p class="text-gray-600">El Nido Restro Bar</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-primary text-4xl mb-6">"</div>
+                    <p class="text-gray-600 mb-6">The Social Artist is hands down the best marketing agency we've worked
+                        with! Their branding, social media management, and ad strategies have helped TCD Bakers attract
+                        more customers and grow our brand. If you're looking for results, they're the team to trust!</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="ri-user-3-line text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Deepak</h4>
+                            <p class="text-gray-600">TCD Bakers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-24 bg-secondary">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Let's Create Something Amazing Together</h2>
+                    <p class="text-xl text-gray-600 mb-8">Ready to transform your digital presence? Get in touch with us
+                        today.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                <i class="ri-global-line text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Website</h4>
+                                <p class="text-gray-600">www.thesocialartist.in</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                <i class="ri-mail-line text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Email Us</h4>
+                                <p class="text-gray-600">hello@thesocialartist.in</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                <i class="ri-phone-line text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Call Us</h4>
+                                <p class="text-gray-600">+91 8506044943</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                <i class="ri-map-pin-line text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Visit Us</h4>
+                                <p class="text-gray-600">SCO: 2606, Sector 7A<br>Faridabad, Haryana</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email
+                                Address</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="!rounded-button w-full bg-primary text-white px-6 py-3 hover:bg-primary/90 transition-colors whitespace-nowrap">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <img src="https://static.readdy.ai/image/45f5a755c5aaf69b77bf8ac7ff2528de/6ffcc063b5d2cb5b4bbf896e8592a7f0.png"
+                        alt="The Social Artist Logo" class="h-8 mb-6">
+                    <p class="text-gray-400">Transforming brands through innovative digital marketing strategies.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Branding & Identity</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Social Media
+                                Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Performance
+                                Marketing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Content Creation</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="ri-facebook-fill text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="ri-twitter-fill text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="ri-linkedin-fill text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="ri-instagram-fill text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <div class="text-center">
+                    <p class="text-gray-400">&copy; 2025 The Social Artist. All rights reserved. Designed by Lahori
+                        venkatesh</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
